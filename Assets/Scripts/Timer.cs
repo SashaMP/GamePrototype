@@ -5,9 +5,17 @@ using TMPro;
 //using deltaTime;
 
 public class Timer : MonoBehaviour
-{
+{ 
+
+     public GameObject BackgroundLoseObject;
+
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
+
+    void Start()
+    {
+        BackgroundLoseObject.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -19,6 +27,7 @@ public class Timer : MonoBehaviour
         else if (remainingTime < 0)
         {
             remainingTime = 0;
+            BackgroundLoseObject.SetActive(true);
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);
