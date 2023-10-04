@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
     public GameObject goalTriggerObject;
+    public GameObject InstructionTextObject;
 
     private Rigidbody rb;
     private int count;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         SetCountText();
         winTextObject.SetActive(false);
         goalTriggerObject.SetActive(false);
+        InstructionTextObject.SetActive(true);
 
     }
 
@@ -39,12 +41,12 @@ public class PlayerController : MonoBehaviour
     //sets the text counting the collectibles in the top-left corner
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString() + "/12";
+        countText.text = "Collected: " + count.ToString() + "/12";
 
         if(count >= 12)
         {
+            InstructionTextObject.SetActive(false);
             winTextObject.SetActive(true);
-            //need line here activating GoalCollider in the home
             goalTriggerObject.SetActive(true);
         }
     }

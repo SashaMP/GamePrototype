@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
 { 
 
      public GameObject BackgroundLoseObject;
+     //public GameObject TimerTextObject;
 
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
@@ -15,6 +16,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         BackgroundLoseObject.SetActive(false);
+       // TimerTextObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class Timer : MonoBehaviour
         {
             remainingTime = 0;
             BackgroundLoseObject.SetActive(true);
+            //TimerTextObject.SetActive(true);
         }
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);
