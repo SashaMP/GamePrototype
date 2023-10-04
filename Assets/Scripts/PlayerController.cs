@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
         movementY = movementVector.y;
     }
 
+    //sets the text counting the collectibles in the top-left corner
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString() + "/12";
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
         if(count >= 12)
         {
             winTextObject.SetActive(true);
+            //need line here activating GoalCollider in the home
         }
     }
 
