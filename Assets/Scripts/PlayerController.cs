@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public GameObject goalTriggerObject;
 
     private Rigidbody rb;
     private int count;
@@ -23,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
         SetCountText();
         winTextObject.SetActive(false);
+        goalTriggerObject.SetActive(false);
+
     }
 
     void OnMove(InputValue movementValue)
@@ -42,6 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             winTextObject.SetActive(true);
             //need line here activating GoalCollider in the home
+            goalTriggerObject.SetActive(true);
         }
     }
 
