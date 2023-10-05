@@ -32881,7 +32881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackgroundLoseObject: {fileID: 459335806}
   timerText: {fileID: 1820134266}
-  remainingTime: 10
+  remainingTime: 120
 --- !u!1 &1804158647
 GameObject:
   m_ObjectHideFlags: 0
