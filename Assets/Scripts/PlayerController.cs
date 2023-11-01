@@ -6,7 +6,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 0;
+    //public float speed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
     public GameObject goalTriggerObject;
@@ -17,7 +17,10 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
-    // Start is called before the first frame update
+    public float moveSpeed = 5.0f;
+    public Transform playerCamera;  // Reference to the third-person camera
+
+// Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,13 +33,28 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void OnMove(InputValue movementValue)
+    void Update()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 moveDirection = playerCamera.forward * verticalInput + playerCamera.right * horizontalInput;
+        moveDirection.y = 0;  // Ensure the character stays on the flat plane
+
+        if (moveDirection != Vector3.zero)
+        {
+            transform.forward = moveDirection.normalized;
+            transform.position += moveDirection.normalized * moveSpeed * Time.deltaTime;
+        }
+    }
+
+    /*void OnMove(InputValue movementValue)
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
 
         movementX = movementVector.x;
         movementY = movementVector.y;
-    }
+    }*/
 
     //sets the text counting the collectibles in the top-left corner
     void SetCountText()
@@ -51,12 +69,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+   /* void FixedUpdate()
     {
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
         rb.AddForce(movement * speed);
-    }
+    } 
+    */
 
     private void OnTriggerEnter(Collider other)
     {
