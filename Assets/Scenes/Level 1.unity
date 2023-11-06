@@ -621,7 +621,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'V2.3
+  m_text: 'V2.4
+
 
 '
   m_isRightToLeft: 0
