@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public GameObject goalTriggerObject;
     public GameObject InstructionTextObject;
 
+    public AudioSource collectSFX;
+
     private Rigidbody rb;
     private int count;
     private float movementX;
@@ -83,6 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             count = count + 1;
+            collectSFX.Play();
 
             SetCountText();
         }

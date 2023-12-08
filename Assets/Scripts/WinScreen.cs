@@ -3,6 +3,7 @@ using UnityEngine;
 public class WinScreen : MonoBehaviour
 {
     public GameObject BackgroundWinObject;
+    public AudioSource LevelMusic;
     public string targetTag = "Player";
 
     void Start() {
@@ -12,6 +13,7 @@ public class WinScreen : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag(targetTag)) {
             BackgroundWinObject.SetActive(true);
+            LevelMusic.Pause();
         }
 
         Debug.Log("collided");

@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
 { 
 
      public GameObject BackgroundLoseObject;
+     public AudioSource LevelMusic;
      //public GameObject TimerTextObject;
 
     [SerializeField] TextMeshProUGUI timerText;
@@ -30,6 +31,7 @@ public class Timer : MonoBehaviour
         {
             remainingTime = 0;
             BackgroundLoseObject.SetActive(true);
+            LevelMusic.Pause();
             //TimerTextObject.SetActive(true);
         }
 
