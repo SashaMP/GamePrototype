@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'V3.7
+  m_text: 'V4.2
 
 
 
@@ -4253,7 +4253,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9fb3af25574583d42a5121413bbb6739,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fb3af25574583d42a5121413bbb6739,
         type: 3}
@@ -4268,22 +4268,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9fb3af25574583d42a5121413bbb6739,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fb3af25574583d42a5121413bbb6739,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.99543
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fb3af25574583d42a5121413bbb6739,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.09549429
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fb3af25574583d42a5121413bbb6739,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 10.96
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9fb3af25574583d42a5121413bbb6739,
         type: 3}
@@ -11440,7 +11440,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 12b603fda8069e64399618399dc34196, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
